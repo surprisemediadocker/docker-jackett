@@ -3,7 +3,7 @@ MAINTAINER sparklyballs
 
 # set version label
 ARG BUILD_DATE
-ARG VERSION
+ARG VERSION="v0.7.1609"
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
 # environment settings
