@@ -18,8 +18,7 @@ RUN \
 	wget && \
  mkdir -p \
 	/app/Jackett && \
- jack_tag=$(curl -sX GET "https://api.github.com/repos/Jackett/Jackett/releases/latest" \
-	| awk '/tag_name/{print $4;exit}' FS='[""]') && \
+ jack_tag=$(cd /tmp && git clone https://github.com/Jackett/Jackett.git && cd /tmp/Jackett/ && git describe --abbrev=0 --tags) && \
  curl -o \
  /tmp/jacket.tar.gz -L \
 	https://github.com/Jackett/Jackett/releases/download/$jack_tag/Jackett.Binaries.Mono.tar.gz && \
